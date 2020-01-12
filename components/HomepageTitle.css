@@ -1,0 +1,83 @@
+.homepage-title {
+  font-size: 5em;
+  background: #e5bfb0;
+}
+
+.homepage-text {
+  color: #3f2629;
+  font-size: .8em;
+}
+
+.homepage-subtext {
+  font-size: 1.5em;
+  color: #3f2629;
+}
+
+.homepage-subtext2 {
+  font-size: .8em;
+  color: #3f2629;
+}
+
+.homepage-subtext3 {
+  font-size: .25em;
+  color: #3f2629;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .homepage-text {
+  	font-size: .8em;
+  }
+
+  .homepage-subtext {
+	font-size: 1.1em;
+  }
+
+  .homepage-subtext2 {
+    font-size: .8em;
+  }
+
+  .homepage-subtext3 {
+    font-size: .25em;
+    margin-top: 15px;
+  }   
+}
+
+
+@media (max-width: 640px) {
+  .homepage-text {
+  	font-size: .4em;
+  }
+
+  .homepage-subtext {
+	font-size: .7em;
+  }
+
+  .homepage-subtext2 {
+    font-size: .4em;
+  }
+
+  .homepage-subtext3 {
+    font-size: .25em;
+    margin-top: 10px;
+  }   
+}
+
+@media (max-width: 400px) {
+  .homepage-text {
+  	font-size: .3em;
+  }
+
+  .homepage-subtext {
+	font-size: .6em;
+  }
+
+  .homepage-subtext2 {
+    font-size: .3em;
+  }
+
+  .homepage-subtext3 {
+    font-size: .125em;
+    margin-top: 10px;
+  }   
+}
