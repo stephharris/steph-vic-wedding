@@ -88,10 +88,93 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/CrosswordInput.js":
+/*!**************************************!*\
+  !*** ./components/CrosswordInput.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-fetch */ "isomorphic-fetch");
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/index.css */ "./styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_4__);
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+class CrosswordInput extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false,
+      value: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      value: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('this.state.value', this.state.value);
+    fetch('/api/crossword', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()({
+        data: this.state.value
+      })
+    }).then(res => {
+      res.status === 200 ? this.setState({
+        submitted: true
+      }) : '';
+    });
+  }
+
+  render() {
+    return __jsx("form", {
+      onSubmit: this.handleSubmit
+    }, __jsx("input", {
+      onChange: this.handleChange,
+      className: "bg-red-200 h-10 w-20",
+      type: "text",
+      value: this.state.value
+    }), __jsx("input", {
+      type: "submit",
+      value: "Submit"
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CrosswordInput);
+
+/***/ }),
 
 /***/ "./components/Header.js":
 /*!******************************!*\
@@ -291,6 +374,17 @@ const withLayout = WrappedComponent => {
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -2141,8 +2235,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hocs_withLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hocs/withLayout */ "./hocs/withLayout.js");
 /* harmony import */ var _components_HomepageTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/HomepageTitle */ "./components/HomepageTitle.js");
-/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/index.css */ "./styles/index.css");
-/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_CrosswordInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/CrosswordInput */ "./components/CrosswordInput.js");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/index.css */ "./styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/stephharris/Projects/steph-vic-wedding/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2150,18 +2245,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Homepage = props => {
   return __jsx("div", {
-    className: "w-screen h-screen absolute -z-1 top-0",
+    className: "w-screen h-screen",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx(_components_HomepageTitle__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
+    },
+    __self: undefined
+  }), __jsx(_components_CrosswordInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: undefined
   }));
@@ -2182,7 +2284,7 @@ const Homepage = props => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2191,6 +2293,17 @@ const Homepage = props => {
 
 module.exports = __webpack_require__(/*! /Users/stephharris/Projects/steph-vic-wedding/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -2301,6 +2414,28 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "isomorphic-fetch":
+/*!***********************************!*\
+  !*** external "isomorphic-fetch" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-fetch");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 
