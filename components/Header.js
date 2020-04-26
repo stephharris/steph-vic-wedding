@@ -1,19 +1,14 @@
 import Link from 'next/link';
+
 import '../styles/index.css';
 
-const headerStyle = {
-  marginLeft: 'auto'
-};
-
-const linkStyle = {
-  marginRight: '30px'
-}
-
 const Header = () => (
-  <div className="w-full p-12 sm:p-8 inline-flex">
-    <Link href="/">
-      <a className="header-link">stephandvic.com</a>
-    </Link>
+  <div className="header-wrapper">
+    <div className="header">
+      <Link href="/">
+        <a className="header-link">Steph & Vic</a>
+      </Link>
+    </div>
   </div>
 );
 

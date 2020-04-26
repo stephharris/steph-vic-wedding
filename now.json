@@ -1,0 +1,17 @@
+{
+  "name": "env-vars",
+  "version": 1,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "env": {
+    "SECRET": "@secret",
+    "SECRET_URL": "@secret_url"
+  }
+}
+
+// To add a new production env variable in the now CLI: 
+// now secrets add secret_url xxxx

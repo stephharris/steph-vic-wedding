@@ -9,8 +9,9 @@ class CrosswordInput extends Component {
     super(props)
 
     this.state = {
-      submitted: false,
-      value: ''
+      value: '',
+      message: '',
+      secretLink: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,7 +26,12 @@ class CrosswordInput extends Component {
 
     event.preventDefault();
 
-    console.log('this.state.value', this.state.value)
+    // clearing state values if empty
+    if(!this.state.value) {
+      this.setState({ message: '' })
+      this.setState({ secretLink: '' })
+      return
+    }
 
     fetch('/api/crossword', {
       method: 'post',
@@ -35,16 +41,33 @@ class CrosswordInput extends Component {
       },
       body: JSON.stringify({ data: this.state.value })
     }).then((res) => {
-      res.status === 200 ? this.setState({ submitted: true }) : ''
+      return res.json()
+    }).then((data) => {
+      this.setState({ message: data.message })
+
+      if(data.link) {
+        this.setState({ secretLink: data.link })
+      }
     })
   }
 
   render() {
+
+    console.log('LOL! NICE TRY DEV FRIENDS. THIS IS SERVER-SIDE RENDERED WITH PROTECTED ENV VARIABLES... NO CHEATING, BUT I LOVE YOU. <3')
+
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} className="bg-red-200 h-10 w-20" type="text" value={this.state.value} />
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="">
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} className="bg-red-200 h-10 w-20" type="text" value={this.state.value} />
+          <input type="submit" value="Submit" />
+        </form>
+        { Boolean(this.state.message) &&
+          <div>
+            { this.state.message }
+            { this.state.secretLink }
+          </div>
+        }
+      </div>
     )
   }
 }

@@ -1,0 +1,38 @@
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  background: lavender;
+}
+
+.header {
+  max-width: 1250px;
+  height: 100px;
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+
+  background: lightblue;
+}
+
+@media (min-width: 800px) {
+  .header {
+    padding-right: 50px;
+    padding-left: 50px;
+    background: pink;
+  }
+}
+
+@media (min-width: 1250px) {
+  .header {
+    padding: 0 50px 0 50px;
+    background: lavender;
+  }
+}
+
+.header-link {
+  color: #3f2629;
+  font-family: 'Cormorant', serif;
+  font-size: 1.25em;
+}
