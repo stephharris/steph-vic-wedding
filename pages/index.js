@@ -1,26 +1,19 @@
 import React from 'react';
 
-import Fonts from '../components/Fonts';
 import withLayout from '../hocs/withLayout';
-import HomepageTitle from '../components/HomepageTitle';
 import CrosswordInput from '../components/CrosswordInput';
+import HeroSection from '../components/HeroSection';
 
 import '../styles/index.css';
 
 class Index extends React.Component {
-  componentDidMount () {
-    Fonts()
-  }
 
   render() {
     return (
       <div className="wrapper">
-        <div className="hero-section">
-          <div className="hero-title">
-            <h1 className="title-text">Stephanie Harris</h1>
-            <h1 className="title-text">- and -</h1>
-            <h1 className="title-text">Victor Ma</h1>
-          </div>
+        <HeroSection />
+        <div className="bio">
+
         </div>
       </div>
     )

@@ -1,0 +1,15 @@
+.hero-image {
+
+}
+
+@media (min-width: 800px) {
+  .hero-image {
+
+  }
+}
+
+@media (min-width: 1250px) {
+  .hero-image {
+
+  }
+}

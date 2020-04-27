@@ -6,35 +6,12 @@ body {
   @apply bg-white;
 }
 
-@font-face {
-  font-family: Cormorant;
-  src: url(https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,300)
-}
-
-@font-face {
-  font-family: Old Standard TT;
-  src: url(https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400)
-}
-
 .wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-}
 
-.hero-section {
-  background: salmon;
-  width: 100vw;
-  height: calc(100vh - 100px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-title {
-  display: block;
-  text-align: center;
-  font-size: 4em;
-  font-family: serif;
+  background: pink;
 }
 
 .section {
@@ -43,7 +20,6 @@ body {
   width: 100%;
   padding-right: 30px;
   padding-left: 30px;
-  background: lightblue;
 }
 
 
@@ -51,15 +27,22 @@ body {
   .section {
     padding-right: 50px;
     padding-left: 50px;
-  	background: pink;
   }
 }
 
 @media (min-width: 1250px) {
   .section {
-  	padding: 0 50px 0 50px;
-    background: yellow;
+    padding: 0 50px 0 50px;
   }
 }
 
+.bio {
+  background: #fadfda;
+  width: 100%;
+  height: 500px;
+
+}
+
 @import "../components/Header.css";
+@import "../components/HeroSection.css";
+@import "../components/HeroImage.css";
