@@ -3,6 +3,8 @@ import React from 'react';
 import withLayout from '../hocs/withLayout';
 import CrosswordInput from '../components/CrosswordInput';
 import HeroSection from '../components/HeroSection';
+import OurStory from '../components/OurStory';
+import GallerySection from '../components/GallerySection';
 
 import '../styles/index.css';
 
@@ -12,19 +14,12 @@ class Index extends React.Component {
     return (
       <div className="wrapper">
         <HeroSection />
-        <div className="bio">
-
-        </div>
+        <OurStory />
+        <GallerySection />
       </div>
     )
   }
 }
 
 
-export default withLayout(Index)
-
-/*
-        // <div className="section">
-        //   <HomepageTitle />
-        //   <CrosswordInput />
-        // </div> */
+export default withLayout(Index);

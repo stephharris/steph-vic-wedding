@@ -1,0 +1,20 @@
+.hero-date {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+/* exclusively for iPhone5 */
+@media (max-width: 340px) {
+  .hero-date {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero-date {
+    font-size: 17px;
+  }
+}

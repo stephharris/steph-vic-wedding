@@ -1,0 +1,35 @@
+.our-story-section {
+  background: lightgrey;
+  padding-bottom: 50px;
+}
+
+.our-story-title {
+  font-family: 'Ramaraja', serif;
+  font-weight: 500;
+  font-size: 50px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;  
+}
+
+.our-story-text {
+  font-family: 'Raleway' 'sans-serif';
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  display: block;
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* exclusively for iPhone5 */
+@media (max-width: 340px) {
+  .our-story-text {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  .our-story-text {
+    font-size: 17px;
+  }
+}

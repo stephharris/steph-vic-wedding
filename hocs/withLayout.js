@@ -1,10 +1,10 @@
-import Header from '../components/Header';
+import Logo from '../components/Logo';
 
 const withLayout = WrappedComponent => {
  const Layout = props => {
    return (
       <div>
-        <Header />
+        <Logo />
         <WrappedComponent {...props} />
       </div>
     )
