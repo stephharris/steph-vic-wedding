@@ -1,7 +1,5 @@
 import classNames from 'classnames';
 
-import '../styles/index.css';
-
 const OurStory = () => (
   <div
     className={classNames(

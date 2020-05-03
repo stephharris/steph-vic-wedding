@@ -1,6 +1,4 @@
-import { Component } from 'react'
-
-import '../../../styles/index.css';
+import { Component } from 'react';
 
 class GalleryImage extends Component {
   constructor(props) {
@@ -8,10 +6,12 @@ class GalleryImage extends Component {
   }
 
   render() {
-    const { handleExpandImage, label } = this.props
+    const { handleExpandImage, label, imageUrl } = this.props
 
     return (
-      <img onClick={() => handleExpandImage(label)} className="gallery-image" src="/romance_square.png" alt="Romantic Hero Image of Steph and Vic" />
+      <div className="gallery-image">
+        <img onClick={() => handleExpandImage(label)} src={imageUrl} alt="Romantic Hero Image of Steph and Vic" />
+      </div>
     )
   }
 }

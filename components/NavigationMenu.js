@@ -1,5 +1,3 @@
-import '../styles/index.css';
-
 const NavigationMenu = () => (
   <div className="navigation-menu">
     <a href="#our-story">Our Story</a>

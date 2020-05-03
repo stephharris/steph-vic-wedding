@@ -2,8 +2,6 @@ import { Component } from 'react'
 import Head from 'next/head'
 import 'isomorphic-fetch'
 
-import '../styles/index.css';
-
 class CrosswordInput extends Component {
   constructor(props) {
     super(props)

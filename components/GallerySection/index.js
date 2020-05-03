@@ -1,10 +1,34 @@
 import classNames from 'classnames';
 import { Component } from 'react'
-import { useRouter } from 'next/router';
 
-import '../../styles/index.css';
 import GalleryImage from './GalleryImage';
 
+const IMAGES = [
+{
+    label: 'in_the_mud',
+    caption: 'Moments before crawling over an 8 inch long cave centipede in Phong Nha, Vietnam.',
+    imageUrl: {
+      square: 'in_the_mud.png',
+      original: 'in_the_mud.png'
+    }
+  },
+  {
+    label: 'sunset_rooftop',
+    caption: 'Los Angeles, CA 2019',
+    imageUrl: {
+      square: 'sunset_rooftop.png',
+      original: 'sunset_rooftop.png'
+    }
+  },
+  {
+    label: 'on_the_bridge',
+    caption: 'Los Angeles Bridge, CA 2019',
+    imageUrl: {
+      square: 'on_the_bridge.png',
+      original: 'on_the_bridge.png'
+    }
+  }
+]
 
 class GallerySection extends Component {
 
@@ -16,15 +40,22 @@ class GallerySection extends Component {
     }
 
     this.handleExpandImage = this.handleExpandImage.bind(this)
+    this.handleCloseExpanded = this.handleCloseExpanded.bind(this)
+    this.renderImageGallery = this.renderImageGallery.bind(this)
   }
 
-  componentDidMount() {
-    console.log('this.state.expandedImage', this.state.expandedImage)
+  handleCloseExpanded() {
+    this.setState({ expandedImage: '' })
   }
 
   handleExpandImage(name) {
-    console.log('this.ref', name)
     this.setState({ expandedImage: name})
+  }
+
+  renderImageGallery() {
+    return IMAGES.map((image) => {
+      return <GalleryImage key={image.label} label={image.label} imageUrl={image.imageUrl.square} handleExpandImage={this.handleExpandImage} />
+    })
   }
 
   render() {
@@ -37,15 +68,16 @@ class GallerySection extends Component {
         <div className="content-wrapper">
            <h2 id="gallery" className="gallery-title">Gallery</h2>
            <div className="gallery-images">
-             <GalleryImage label="1" handleExpandImage={this.handleExpandImage} />
-             <GalleryImage label="2" handleExpandImage={this.handleExpandImage} />
-             <GalleryImage label="3" handleExpandImage={this.handleExpandImage} />
+           { this.renderImageGallery() }
            </div>
         </div>
-        { Boolean(this.state.expandedImage) &&
-          <div className="popup">
-              <div className="popup-inner">hii</div>
-          </div> }
+        { this.state.expandedImage &&
+          <div onClick={this.handleCloseExpanded} className="popup">
+              <div className="popup-inner">
+                <img src="/sunset_rooftop.png" />
+              </div>
+          </div>
+        }
       </div>
     )
   }
