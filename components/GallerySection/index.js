@@ -1,7 +1,9 @@
 import classNames from 'classnames';
-import { Component } from 'react'
+import { Component } from 'react';
+import { get, find } from 'lodash';
 
 import GalleryImage from './GalleryImage';
+import CloseIcon from '../CloseIcon';
 
 const IMAGES = [
 {
@@ -52,6 +54,20 @@ class GallerySection extends Component {
     this.setState({ expandedImage: name})
   }
 
+  renderExpandedImage() {
+    const image = find(IMAGES, { label: this.state.expandedImage })
+    const imageUrl = image && (get(image, 'imageUrl.original') || (get, 'imageUrl.square'))
+
+    return (
+      <div className="popup">
+          <div className="popup-inner">
+            <CloseIcon handleClose={this.handleCloseExpanded} />
+            <img src={`/${imageUrl}`} />
+          </div>
+      </div>
+    )
+  }
+
   renderImageGallery() {
     return IMAGES.map((image) => {
       return <GalleryImage key={image.label} label={image.label} imageUrl={image.imageUrl.square} handleExpandImage={this.handleExpandImage} />
@@ -71,13 +87,7 @@ class GallerySection extends Component {
            { this.renderImageGallery() }
            </div>
         </div>
-        { this.state.expandedImage &&
-          <div onClick={this.handleCloseExpanded} className="popup">
-              <div className="popup-inner">
-                <img src="/sunset_rooftop.png" />
-              </div>
-          </div>
-        }
+        { this.state.expandedImage && this.renderExpandedImage() }
       </div>
     )
   }
