@@ -1,0 +1,15 @@
+{
+  "name": "env-vars",
+  "version": 1,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "env": {
+    "SECRET_CODE": "@secret",
+    "SECRET_VIDEO": "@secret_url",
+    "SECRET_SUCCESS_MSG": "@secret_success_msg"
+  }
+}

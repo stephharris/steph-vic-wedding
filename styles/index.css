@@ -6,8 +6,55 @@ body {
   @apply bg-white;
 }
 
-@import "../components/HomepageTitle.css";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.header-link {
-  color: #3f2629;
+  background: #fadfda;
 }
+
+.section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  max-width: 1250px;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+}
+
+@media (min-width: 500px) {
+  .content-wrapper {
+    padding: 30px 30px 0 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  .section {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .content-wrapper {
+    padding: 50px 50px 0 50px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .section {
+  	padding-right: 50px;
+  	padding-left: 50px;
+  }
+}
+
+@import "../components/Logo.css";
+@import "../components/HeroSection/index.css";
+@import "../components/NavigationMenu.css";
+@import "../components/OurStory.css";
+@import "../components/GallerySection/index.css";
+@import "../components/CloseIcon.css";
+@import "../components/CrosswordSection/index.css";

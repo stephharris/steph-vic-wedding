@@ -1,0 +1,129 @@
+.crossword-section {
+  background: #f1f1f1;
+  padding-bottom: 100px;
+}
+
+.crossword-title {
+  font-family: 'Ramaraja', serif;
+  font-weight: 500;
+  font-size: 50px;
+  letter-spacing: .5px;
+  margin-bottom: 20px;  
+}
+
+.crossword-text {
+  font-family: 'Raleway' 'sans-serif';
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  display: block;
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+
+.crossword-text span {
+  font-weight: 500;
+}
+
+.crossword-submit-success-btn {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-align: center;
+}
+
+.submit-btn, .crossword-submit-success-btn {
+  background: #111;
+  color: #FFF;
+  font-family: 'Raleway' 'sans-serif';
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.password-input {
+  font-family: 'Raleway' 'sans-serif';
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 20px 15px 20px 15px; 
+  border: .5px solid #111;
+}
+
+.crossword-submit-error-message {
+  font-family: 'Raleway' 'sans-serif';
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: red;  
+}
+
+.crossword-submit-success {
+  width: 100%;
+}
+
+.crossword-submit-success-message {
+  font-family: 'Ramaraja', serif;
+  font-weight: 500;
+  letter-spacing: .5px;
+  font-size: 50px;
+  margin-top: 40px; 
+  line-height: 1; 
+}
+
+.crossword-secret {
+  text-decoration: underline;
+}
+
+.crossword-form--display-none {
+  display: none;
+}
+
+/* exclusively for iPhone5 */
+@media (max-width: 340px) {
+  .crossword-text, 
+  .submit-btn, 
+  .password-input,
+  .crossword-submit-success-btn,
+  .crossword-submit-error-message {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 500px) {
+  .password-input {
+    width: 250px;
+  }
+
+  .submit-btn {
+    width: auto;
+    min-width: 150px;
+    margin-left: 20px;
+  }
+
+  .crossword-submit-success-btn {
+    width: 250px;
+  }
+
+  .crossword-submit-error-message {
+    margin-bottom: -10px;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .crossword-text, 
+  .submit-btn,
+  .crossword-submit-sucess-btn, 
+  .password-input {
+    font-size: 17px;
+  }
+}

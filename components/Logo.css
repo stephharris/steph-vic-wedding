@@ -1,0 +1,58 @@
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.logo {
+  max-width: 1250px;
+  height: 150px;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo-link {
+  color: #111;
+  font-family: 'Ramaraja', serif;
+  letter-spacing: .75px;
+  font-style: bold;
+  font-size: 3.5em;
+  margin: -35px 0 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 500px) {
+  .logo {
+    padding: 0 30px 0 30px;
+  }
+
+  .logo-link {
+    font-size: 4.5em;
+    margin: -5px -10px 0 0;
+  }
+}
+
+
+@media (min-width: 800px) {
+  .logo {
+    padding: 20px 50px 0 50px;
+  }
+
+  .logo-link {
+    font-size: 5.5em;
+    margin: 30px -32px 0 0;
+  }
+}
+
+@media (min-width: 1250px) {
+  .logo {
+    padding: 20px 50px 0 50px;
+  }
+}
