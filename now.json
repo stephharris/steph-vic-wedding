@@ -1,9 +1,0 @@
-{
-  "build": {
-    "env": {
-      "SECRET_CODE": "@secret-code",
-      "SECRET_VIDEO": "@secret-video",
-      "SECRET_SUCCESS_MSG": "@secret-success-msg"
-    }
-  }
-}
