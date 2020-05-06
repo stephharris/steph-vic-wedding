@@ -48,6 +48,10 @@
   width: 100%;
 }
 
+.successBtn {
+  padding: 20px 30px;
+}
+
 .password {
   font-family: 'Raleway' 'sans-serif';
   font-weight: 300;
@@ -89,6 +93,9 @@
 
 .crosswordFormDisplayNone {
   display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 /* exclusively for iPhone5 */
