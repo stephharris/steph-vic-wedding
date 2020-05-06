@@ -1,9 +1,9 @@
-.gallery-section {
-  background: #fadfda;
-  padding-bottom: 50px;
+.gallerySection {
+  background: #f1f1f1;
+  padding-bottom: 100px;
 }
 
-.gallery-title {
+.galleryTitle {
   font-family: 'Ramaraja', serif;
   font-weight: 500;
   font-size: 50px;
@@ -11,7 +11,7 @@
   margin-bottom: 5px;  
 }
 
-.gallery-text {
+.galleryText {
   font-family: 'Raleway' 'sans-serif';
   font-weight: 300;
   font-size: 12px;
@@ -21,13 +21,13 @@
   margin-bottom: 20px;
 }
 
-.gallery-images {
+.galleryImages {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.gallery-image {
+.galleryImage {
   width: 32%;
   height: 100%;
   background: #FFF;
@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-.gallery-image:hover img {
+.galleryImage:hover img {
   opacity: .9; 
 }
 
@@ -55,7 +55,7 @@
   z-index: 2;
 }
 
-.popup-inner {
+.popupInner {
   margin: auto;
   position: relative;
   z-index: 3;
@@ -63,36 +63,36 @@
   padding: 20px;
 }
 
-.popup-inner img {
+.popupInner img {
   max-height: calc(100vh - 100px);
   width: auto;
 }
 
-.gallery-image {
+.galleryImage {
   background: transparent;
 }
 
 @media (min-width: 500px) {
-  .popup-inner {
+  .popupInner {
     padding: 30px;
   }
 }
 
 @media (min-width: 800px) {
-  .popup-inner {
+  .popupInner {
     padding: 60px 50px 50px 50px;
   }
 }
 
 /* exclusively for iPhone5 */
 @media (max-width: 340px) {
-  .gallery-text {
+  .galleryText {
     font-size: 10px;
   }
 }
 
 @media (min-width: 800px) {
-  .gallery-text {
+  .galleryText {
     font-size: 17px;
   }
 }

@@ -1,4 +1,4 @@
-.logo-wrapper {
+.logoWrapper {
   display: flex;
   justify-content: center;
   background: transparent;
@@ -18,7 +18,7 @@
   justify-content: flex-end;
 }
 
-.logo-link {
+.logoLink {
   color: #111;
   font-family: 'Ramaraja', serif;
   letter-spacing: .75px;
@@ -33,7 +33,7 @@
     padding: 0 30px 0 30px;
   }
 
-  .logo-link {
+  .logoLink {
     font-size: 4.5em;
     margin: -5px -10px 0 0;
   }
@@ -45,7 +45,7 @@
     padding: 20px 50px 0 50px;
   }
 
-  .logo-link {
+  .logoLink {
     font-size: 5.5em;
     margin: 30px -32px 0 0;
   }

@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+import styles from '../index.module.css';
+
 class GalleryImage extends Component {
   constructor(props) {
     super(props)
@@ -9,7 +11,7 @@ class GalleryImage extends Component {
     const { handleExpandImage, label, imageUrl } = this.props
 
     return (
-      <div className="gallery-image">
+      <div className={styles.galleryImage}>
         <img onClick={() => handleExpandImage(label)} src={imageUrl} alt="Romantic Hero Image of Steph and Vic" />
       </div>
     )

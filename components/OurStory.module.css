@@ -1,9 +1,9 @@
-.our-story-section {
+.ourStorySection {
   background: #f1f1f1;
   padding-bottom: 50px;
 }
 
-.our-story-title {
+.ourStoryTitle {
   font-family: 'Ramaraja', serif;
   font-weight: 500;
   font-size: 50px;
@@ -11,7 +11,7 @@
   margin-bottom: 20px;  
 }
 
-.our-story-text {
+.ourStoryText {
   font-family: 'Raleway' 'sans-serif';
   font-weight: 300;
   font-size: 12px;
@@ -23,13 +23,13 @@
 
 /* exclusively for iPhone5 */
 @media (max-width: 340px) {
-  .our-story-text {
+  .ourStoryText {
     font-size: 10px;
   }
 }
 
 @media (min-width: 800px) {
-  .our-story-text {
+  .ourStoryText {
     font-size: 17px;
   }
 }

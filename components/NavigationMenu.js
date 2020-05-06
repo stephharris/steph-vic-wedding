@@ -1,5 +1,7 @@
+import styles from './NavigationMenu.module.css';
+
 const NavigationMenu = () => (
-  <div className="navigation-menu">
+  <div className={styles.navigationMenu}>
     <a href="#our-story">Our Story</a>
     <a href="#gallery">Gallery</a>
     <a target="_blank" href="https://www.zola.com/registry/stephanieandvictoraugust21">Registry</a>

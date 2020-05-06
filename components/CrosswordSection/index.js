@@ -3,6 +3,8 @@ import { Component } from 'react';
 import Head from 'next/head';
 import 'isomorphic-fetch';
 
+import styles from './index.module.css';
+
 class CrosswordSection extends Component {
   constructor(props) {
     super(props)
@@ -33,9 +35,9 @@ class CrosswordSection extends Component {
 
   renderSuccessMessage() {
     return (
-      <div className="crossword-submit-success">
-        <h3 className="crossword-submit-success-message">Congrats - you did it! {this.state.successMessage} <span className="crossword-secret">{ this.state.secret }</span>.</h3>
-        <a className="crossword-submit-success-btn" target="_blank" href={this.state.secretLink}>click here</a>
+      <div className={styles.submitSuccess}>
+        <h3 className={styles.submitSuccessMessage}>Congrats - you did it! {this.state.successMessage} <span className={styles.secret}>{ this.state.secret }</span>.</h3>
+        <a className={styles.successBtn} target="_blank" href={this.state.secretLink}>click here</a>
       </div>
     )
   }
@@ -62,7 +64,6 @@ class CrosswordSection extends Component {
       return res.json()
     }).then((data) => {
       this.setState({ isCorrect: data.isCorrect })
-      console.log('data', data)
 
       if(data.link && data.successMessage && data.secret) {
         const successMessage = data.successMessage.split("_").join(" ")
@@ -77,31 +78,31 @@ class CrosswordSection extends Component {
   render() {
 
     console.log('LOL! NICE TRY DEV FRIENDS. THIS IS SERVER-SIDE RENDERED WITH PROTECTED ENV VARIABLES... NO CHEATING, BUT I LOVE YOU. <3')
-    console.log('this.state: ', this.state)
+
     return (
       <div
         className={classNames(
           'section',
-          'crossword-section'
+          styles.crosswordSection
         )}>
         <div className="content-wrapper">
-          <h2 id="crossword" className="crossword-title">Crossword</h2>
-          <p className="crossword-text">If you think you have successfully solved our crossword and unlocked the secret password, please enter below.</p>
-          <p className="crossword-text"><span>Hint:</span> There are two ways of solving this.</p>
+          <h2 id="crossword" className={styles.crosswordTitle}>Crossword</h2>
+          <p className={styles.crosswordText}>If you think you have successfully solved our crossword and unlocked the secret password, please enter below.</p>
+          <p className={styles.crosswordText}><span>Hint:</span> There are two ways of solving this.</p>
           { (this.state.isCorrect === false) &&
             <div>
-              <p className="crossword-submit-error-message">Not quite! Try again.</p>
+              <p className={styles.errorMessage}>Not quite! Try again.</p>
             </div>
           }
           <form
             className={classNames(
-              "crossword-form",
-              Boolean(this.state.isCorrect) && "crossword-form--display-none"
+              styles.crosswordForm,
+              Boolean(this.state.isCorrect) && styles.crosswordFormDisplayNone
             )}
             onSubmit={this.handleSubmit}
           >
-            <input className="password-input" onChange={this.handleChange} type="text" value={this.state.value} />
-            <input className="submit-btn" type="submit" value="submit" role="button" />
+            <input className={styles.password} onChange={this.handleChange} type="text" value={this.state.value} />
+            <input className={styles.submit} type="submit" value="submit" role="button" />
           </form>
           { this.state.isCorrect && this.renderSuccessMessage() }
         </div>

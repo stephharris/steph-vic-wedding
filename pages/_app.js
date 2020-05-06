@@ -15,8 +15,8 @@ class Index extends React.Component {
       <div className="wrapper">
         <HeroSection />
         <OurStory />
-        <GallerySection />
         <CrosswordSection />
+        <GallerySection />
       </div>
     )
   }

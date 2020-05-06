@@ -6,6 +6,8 @@ import GalleryImage from './GalleryImage';
 import CloseIcon from '../CloseIcon';
 import IMAGES from './IMAGES';
 
+import styles from './index.module.css';
+
 class GallerySection extends Component {
 
   constructor(props) {
@@ -33,8 +35,8 @@ class GallerySection extends Component {
     const imageUrl = image && (get(image, 'imageUrl.original') || get(image, 'imageUrl.square'))
 
     return (
-      <div className="popup">
-          <div className="popup-inner">
+      <div className={styles.popup}>
+          <div className={styles.popupInner}>
             <CloseIcon handleClose={this.handleCloseExpanded} />
             <img src={`${imageUrl}`} />
           </div>
@@ -53,11 +55,11 @@ class GallerySection extends Component {
       <div
         className={classNames(
           'section',
-          'gallery-section'
+          styles.gallerySection
         )}>
         <div className="content-wrapper">
-           <h2 id="gallery" className="gallery-title">Gallery</h2>
-           <div className="gallery-images">
+           <h2 id="gallery" className={styles.galleryTitle}>Gallery</h2>
+           <div className={styles.galleryImages}>
            { this.renderImageGallery() }
            </div>
         </div>

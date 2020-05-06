@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white;
+  background: #FFF;
 }
 
 .wrapper {
@@ -50,11 +50,3 @@ body {
   	padding-left: 50px;
   }
 }
-
-@import "../components/Logo.css";
-@import "../components/HeroSection/index.css";
-@import "../components/NavigationMenu.css";
-@import "../components/OurStory.css";
-@import "../components/GallerySection/index.css";
-@import "../components/CloseIcon.css";
-@import "../components/CrosswordSection/index.css";
