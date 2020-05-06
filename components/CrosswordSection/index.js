@@ -35,7 +35,7 @@ class CrosswordSection extends Component {
     return (
       <div className="crossword-submit-success">
         <h3 className="crossword-submit-success-message">Congrats - you did it! {this.state.successMessage} <span className="crossword-secret">{ this.state.secret }</span>.</h3>
-        <a className="crossword-submit-success-btn" href={this.state.secretLink}>enjoy secret videos</a>
+        <a className="crossword-submit-success-btn" target="_blank" href={this.state.secretLink}>click here</a>
       </div>
     )
   }
