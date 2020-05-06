@@ -1,6 +1,8 @@
 const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 
+require('dotenv').config()
+
 
 module.exports = withPlugins(
   [
@@ -8,7 +10,9 @@ module.exports = withPlugins(
   ],
   {
     env: {
-      SECRET: process.env.SECRET
+      SECRET_CODE: process.env.SECRET_CODE,
+      SECRET_VIDEO: process.env.SECRET_VIDEO,
+      SECRET_SUCCESS_MSG: process.env.SECRET_SUCCESS_MSG
     }
   },
 );
