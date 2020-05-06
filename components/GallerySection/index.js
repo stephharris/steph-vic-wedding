@@ -4,33 +4,7 @@ import { get, find } from 'lodash';
 
 import GalleryImage from './GalleryImage';
 import CloseIcon from '../CloseIcon';
-
-const IMAGES = [
-{
-    label: 'in_the_mud',
-    caption: 'Moments before crawling over an 8 inch long cave centipede in Phong Nha, Vietnam.',
-    imageUrl: {
-      square: 'in_the_mud.png',
-      original: 'in_the_mud.png'
-    }
-  },
-  {
-    label: 'sunset_rooftop',
-    caption: 'Los Angeles, CA 2019',
-    imageUrl: {
-      square: 'sunset_rooftop.png',
-      original: 'sunset_rooftop.png'
-    }
-  },
-  {
-    label: 'on_the_bridge',
-    caption: 'Los Angeles Bridge, CA 2019',
-    imageUrl: {
-      square: 'on_the_bridge.png',
-      original: 'on_the_bridge.png'
-    }
-  }
-]
+import IMAGES from './IMAGES';
 
 class GallerySection extends Component {
 
@@ -56,13 +30,13 @@ class GallerySection extends Component {
 
   renderExpandedImage() {
     const image = find(IMAGES, { label: this.state.expandedImage })
-    const imageUrl = image && (get(image, 'imageUrl.original') || (get, 'imageUrl.square'))
+    const imageUrl = image && (get(image, 'imageUrl.original') || get(image, 'imageUrl.square'))
 
     return (
       <div className="popup">
           <div className="popup-inner">
             <CloseIcon handleClose={this.handleCloseExpanded} />
-            <img src={`/${imageUrl}`} />
+            <img src={`${imageUrl}`} />
           </div>
       </div>
     )

@@ -56,3 +56,5 @@ body {
 @import "../components/NavigationMenu.css";
 @import "../components/OurStory.css";
 @import "../components/GallerySection/index.css";
+@import "../components/CloseIcon.css";
+@import "../components/CrosswordSection/index.css";

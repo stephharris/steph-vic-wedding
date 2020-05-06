@@ -7,7 +7,7 @@
   font-family: 'Ramaraja', serif;
   font-weight: 500;
   font-size: 50px;
-  letter-spacing: 1.5px;
+  letter-spacing: .5px;
   margin-bottom: 5px;  
 }
 
@@ -66,6 +66,10 @@
 .popup-inner img {
   max-height: calc(100vh - 100px);
   width: auto;
+}
+
+.gallery-image {
+  background: transparent;
 }
 
 @media (min-width: 500px) {

@@ -22,15 +22,16 @@ app.prepare().then(() => {
 
   server.post('/api/crossword', (req, res) => {
     const { data } = req.body
-    const secret = process.env.SECRET
-    const secretUrl = process.env.SECRET_URL
+    const secret = process.env.SECRET_CODE
+    const secretUrl = process.env.SECRET_VIDEO
+    const secretSuccessMsg = process.env.SECRET_SUCCESS_MSG
 
     if(req.body.data === secret) {
       res.set('Content-Type', 'application/json');
-      res.send({ message: 'You did it!', link: secretUrl })
+      res.send({ secret: secret, successMessage: secretSuccessMsg, link: secretUrl, isCorrect: true })
     } else {
       res.set('Content-Type', 'application/json');
-      res.send({ message: 'Not quite! Try again.' })
+      res.send({ isCorrect: false })
     }
   })
 

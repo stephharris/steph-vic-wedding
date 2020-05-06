@@ -8,10 +8,8 @@
     }
   ],
   "env": {
-    "SECRET": "@secret",
-    "SECRET_URL": "@secret_url"
+    "SECRET_CODE": "@secret",
+    "SECRET_VIDEO": "@secret_url",
+    "SECRET_SUCCESS_MSG": "@secret_success_msg"
   }
 }
-
-// To add a new production env variable in the now CLI: 
-// now secrets add secret_url xxxx
