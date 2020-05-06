@@ -1,14 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/next"
+  "build": {
+    "env": {
+      "SECRET_CODE": "@secret",
+      "SECRET_VIDEO": "@secret_url",
+      "SECRET_SUCCESS_MSG": "@secret_success_msg"
     }
-  ],
-  "env": {
-    "SECRET_CODE": "@secret",
-    "SECRET_VIDEO": "@secret_url",
-    "SECRET_SUCCESS_MSG": "@secret_success_msg"
   }
 }
