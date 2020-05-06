@@ -1,6 +1,4 @@
 node_modules
 .next/
-public/
 .env
 yarn.lock
-next.config.js
