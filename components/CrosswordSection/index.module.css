@@ -25,13 +25,6 @@
   font-weight: 500;
 }
 
-.submitSuccess {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  text-align: left;
-}
-
 .submit, .successBtn {
   background: #111;
   color: #FFF;
@@ -49,6 +42,7 @@
 }
 
 .successBtn {
+  text-align: left;
   padding: 20px 30px;
 }
 
@@ -59,7 +53,7 @@
   letter-spacing: 2px;
   padding: 20px 15px; 
   border: .5px solid #111;
-  width: calc(100% - 30px);
+  width: 100%;
 }
 
 .errorMessage {
@@ -93,9 +87,6 @@
 
 .crosswordFormDisplayNone {
   display: none;
-  visibility: hidden;
-  width: 0;
-  height: 0;
 }
 
 /* exclusively for iPhone5 */

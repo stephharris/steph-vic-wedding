@@ -94,16 +94,14 @@ class CrosswordSection extends Component {
               <p className={styles.errorMessage}>Not quite! Try again.</p>
             </div>
           }
-          <form
-            className={classNames(
-              styles.crosswordForm,
-              Boolean(this.state.isCorrect) && styles.crosswordFormDisplayNone
-            )}
-            onSubmit={this.handleSubmit}
-          >
-            <input className={styles.password} onChange={this.handleChange} type="text" value={this.state.value} />
-            <input className={styles.submit} type="submit" value="submit" role="button" />
-          </form>
+          { !(this.state.isCorrect) &&
+             <form
+              onSubmit={this.handleSubmit}
+            >
+              <input className={styles.password} onChange={this.handleChange} type="text" value={this.state.value} />
+              <input className={styles.submit} type="submit" value="submit" role="button" />
+            </form>
+          }
           { this.state.isCorrect && this.renderSuccessMessage() }
         </div>
       </div>
