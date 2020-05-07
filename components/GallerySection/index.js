@@ -58,7 +58,7 @@ class GallerySection extends Component {
           styles.gallerySection
         )}>
         <div className="content-wrapper">
-           <h2 id="gallery" className={styles.galleryTitle}>Gallery</h2>
+           <h2 id="photos" className={styles.galleryTitle}>Photos</h2>
            <div className={styles.galleryImages}>
            { this.renderImageGallery() }
            </div>

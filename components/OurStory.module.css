@@ -14,7 +14,7 @@
 .ourStoryText {
   font-family: 'Raleway' 'sans-serif';
   font-weight: 300;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 2px;
   display: block;
   line-height: 1.8em;
@@ -24,7 +24,7 @@
 /* exclusively for iPhone5 */
 @media (max-width: 340px) {
   .ourStoryText {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
