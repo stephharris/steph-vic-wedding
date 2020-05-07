@@ -14,9 +14,12 @@ class CrosswordSection extends Component {
       secretLink: '',
       successMessage: '',
       secret: '',
-      isCorrect: null
+      isCorrect: null,
+      showHint: false
     }
 
+    this.renderHint = this.renderHint.bind(this)
+    this.toggleHint = this.toggleHint.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.getInput = this.getInput.bind(this)
@@ -31,6 +34,33 @@ class CrosswordSection extends Component {
     const answer = this.state.value
 
     return answer.split(' ').join('').toLowerCase()
+  }
+
+  toggleHint() {
+    this.setState({ showHint: !this.state.showHint })
+  }
+
+  renderHint() {
+    return (
+      <div className={styles.hintContainer}>
+        <p
+          onClick={() => this.toggleHint()}
+          className={classNames(
+            styles.crosswordText,
+            styles.crosswordHintText
+          )}>
+          Need another hint?
+        </p>
+        { this.state.showHint &&
+          <p className={classNames(
+            styles.crosswordText,
+            styles.hint
+          )}>
+            Pay close attention to the <span>front</span> of the card you received in the mail.
+          </p>
+        }
+      </div>
+    )
   }
 
   renderSuccessMessage() {
@@ -67,7 +97,7 @@ class CrosswordSection extends Component {
 
       if(data.link && data.successMessage && data.secret) {
         const successMessage = data.successMessage.split("_").join(" ")
-        console.log('data', data)
+
         this.setState({ secret: data.secret })
         this.setState({ successMessage: successMessage })
         this.setState({ secretLink: data.link })
@@ -89,19 +119,22 @@ class CrosswordSection extends Component {
           <h2 id="crossword" className={styles.crosswordTitle}>Crossword</h2>
           <p className={styles.crosswordText}>If you think you have successfully solved our crossword and unlocked the secret password, please enter below.</p>
           <p className={styles.crosswordText}><span>Hint:</span> There are two ways of solving this.</p>
+          { this.renderHint() }
           { (this.state.isCorrect === false) &&
             <div>
               <p className={styles.errorMessage}>Not quite! Try again.</p>
             </div>
           }
-          { !(this.state.isCorrect) &&
-             <form
-              onSubmit={this.handleSubmit}
-            >
-              <input className={styles.password} onChange={this.handleChange} type="text" value={this.state.value} />
-              <input className={styles.submit} type="submit" value="submit" role="button" />
-            </form>
-          }
+          <form
+            className={classNames(
+              styles.crosswordForm,
+              Boolean(this.state.isCorrect) && styles.crosswordFormDisplayNone
+            )}
+            onSubmit={this.handleSubmit}
+          >
+            <input className={styles.password} onChange={this.handleChange} type="text" value={this.state.value} />
+            <input className={styles.submit} type="submit" value="submit" role="button" />
+          </form>
           { this.state.isCorrect && this.renderSuccessMessage() }
         </div>
       </div>

@@ -21,6 +21,27 @@
   margin-bottom: 20px;
 }
 
+.hintContainer {
+  margin-bottom: 40px;
+}
+
+.crosswordHintText {
+  border-bottom: 1px solid #a08061;
+  width: max-content;
+  color: #a08061;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.hint {
+  color: #a08061;
+}
+
+.hint span {
+  font-style: italic;
+  border-bottom: 1px solid #a08061;
+}
+
 .crosswordText span {
   font-weight: 500;
 }
