@@ -8,7 +8,15 @@
   font-weight: 500;
   font-size: 50px;
   letter-spacing: .5px;
-  margin-bottom: 5px;  
+  margin-bottom: 5px;
+}
+
+.captionContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  max-width: 400px;
 }
 
 .galleryText {
@@ -18,7 +26,18 @@
   letter-spacing: 2px;
   display: block;
   line-height: 1.8em;
-  margin-bottom: 20px;
+  color: #FFF;
+  padding: 0;
+}
+
+.credit {
+  color: #c0c0c0;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.creditSpacer {
+  margin-right: 10px;
 }
 
 .galleryImages {
@@ -48,7 +67,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0,0,0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +83,7 @@
 }
 
 .popupInner img {
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 130px);
   width: auto;
 }
 
@@ -87,12 +106,18 @@
 /* exclusively for iPhone5 */
 @media (max-width: 340px) {
   .galleryText {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 600px) {
+  .captionContainer {
+    max-width: 700px;
   }
 }
 
 @media (min-width: 800px) {
   .galleryText {
-    font-size: 17px;
+    font-size: 12px;
   }
 }

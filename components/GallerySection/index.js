@@ -33,12 +33,40 @@ class GallerySection extends Component {
   renderExpandedImage() {
     const image = find(IMAGES, { label: this.state.expandedImage })
     const imageUrl = image && (get(image, 'imageUrl.original') || get(image, 'imageUrl.square'))
+    const caption = image.caption || null
+    let credit = image && image.credit
+
+    if(credit) {
+      credit = `Photo: ${credit}`
+    }
 
     return (
       <div className={styles.popup}>
           <div className={styles.popupInner}>
             <CloseIcon handleClose={this.handleCloseExpanded} />
-            <img src={`${imageUrl}`} />
+            <img src={imageUrl} />
+            { (caption || credit) &&
+              <div className={styles.captionContainer}>
+                { caption &&
+                  <p className={
+                    classNames(
+                      styles.galleryText,
+                      credit && styles.creditSpacer
+                  )}>
+                    {caption}
+                  </p>
+                }
+                { credit &&
+                  <p className={
+                    classNames(
+                      styles.galleryText,
+                      styles.credit,
+                  )}>
+                    {credit}
+                  </p>
+                }
+              </div>
+            }
           </div>
       </div>
     )
