@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import OurStory from '../components/OurStory';
 import GallerySection from '../components/GallerySection';
 import CrosswordSection from '../components/CrosswordSection';
+import Footer from '../components/Footer';
 
 class Index extends React.Component {
 
@@ -15,6 +16,7 @@ class Index extends React.Component {
         <OurStory />
         <CrosswordSection />
         <GallerySection />
+        <Footer />
       </div>
     )
   }

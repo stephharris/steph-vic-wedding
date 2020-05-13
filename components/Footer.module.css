@@ -1,0 +1,26 @@
+.footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 1.2px;  
+}
+
+.footer p {
+  display: inline-flex;
+}
+
+.footer a {
+  margin-left: 3px;
+  text-decoration: underline;
+}
+
+.heart {
+  width: 10px;
+  height: 10px;
+  margin: 4px 5px 0 5px;
+}
